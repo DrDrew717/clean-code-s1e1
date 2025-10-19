@@ -18,7 +18,8 @@
 }
 
 @media (max-width:768px) {
-  .about-matrix { text-align: center;
+  .about-matrix {
+    text-align: center;
   }
 }
 .main-content {
@@ -40,7 +41,8 @@
   margin: 0;
   padding: 0px;
 }
-.task-input, .btn {
+.task-input,
+.btn {
   outline: none;
 }
 .btn {
