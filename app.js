@@ -40,16 +40,20 @@ var createNewTaskElement=function(taskString){
     //Each elements, needs appending
     checkBox.type="checkbox";
     checkBox.className="task-checkbox";
+    checkBox.setAttribute('aria-label', taskInput.value);
     editInput.type="text";
     editInput.className="task-input";
+    editInput.setAttribute('aria-label', `Edit task '${taskInput.value}'`);
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="btn edit-btn";
+    editButton.setAttribute('aria-label', `Edit task '${taskInput.value}'`);
 
     deleteButton.className="btn delete-btn";
     deleteButtonImg.src='./remove.svg';
     deleteButtonImg.className="btn-icon";
     deleteButton.appendChild(deleteButtonImg);
+    deleteButton.setAttribute('aria-label', `Delete task '${taskInput.value}'`);
 
 
     //and appending.
@@ -90,6 +94,8 @@ var editTask=function(){
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit-btn");
     var containsClass=listItem.classList.contains("edit-mode");
+    var deleteBtn=listItem.querySelector(".delete-btn");
+    var checkBoxNew=listItem.querySelector('input[type=checkbox]');
     //If class of the parent is .edit-mode
     if(containsClass){
 
@@ -97,9 +103,14 @@ var editTask=function(){
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
+        editInput.setAttribute('aria-label', `Edit task '${editInput.value}'`);
+        editBtn.setAttribute('aria-label', `Edit task '${editInput.value}'`);
+        checkBoxNew.setAttribute('aria-label', editInput.value);
+        deleteBtn.setAttribute('aria-label', `Delete task '${editInput.value}'`);
     }else{
         editInput.value=label.innerText;
         editBtn.innerText="Save";
+        editBtn.setAttribute('aria-label', `Save task '${editInput.value}'`);
     }
 
     //toggle .edit-mode on the parent.

@@ -14,7 +14,8 @@
     >
   </head>
   <body class="page">
-    <div class="about-matrix">
+    <aside class="about-matrix" aria-labelledby="matrix-title">
+      <h2 id="matrix-title" class="visually-hidden">Eisenhower Matrix</h2>
       <img class="matrix-image" src="./eisenhower-matrix.jpg">
       <a 
         class="more-info"
@@ -22,49 +23,55 @@
       >
         Want more details?
       </a>
-    </div>
-    <div class="main-content">
-      <p id="add-task">
-        <label class="new-task-label" for="new-task">Add Item</label>
-        <div class="task-row">
+    </aside>
+    <main class="main-content" aria-labelledby="main-title">
+      <h1 id="main-title" class="visually-hidden">Todo App</h1>
+      <section id="add-task" aria-labelledby="add-task-title">
+        <h2 id="add-task-title" class="new-task-label">Todo</h2>
+        <form class="task-row" action="#" onsubmit="return false;">
+          <label class="visually-hidden" for="new-task">Add Item</label>
           <input id="new-task" class="task-input" type="text">
-          <button class="btn">Add</button>
-        </div>
-      </p>
-      <h3 class="tasks-title">Todo</h3>
-      <ul id="incomplete-tasks" class="list">
-        <li class="list-item">
-          <input class="task-checkbox" type="checkbox">
-          <label class="task-label">Pay Bills</label>
-          <input type="text" class="task-input">
-          <button class="btn edit-btn">Edit</button>
-          <button class="btn delete-btn">
-            <img class="btn-icon" src="./remove.svg">
-          </button>
-        </li>
-        <li class="list-item edit-mode">
-          <input class="task-checkbox" type="checkbox">
-          <label class="task-label">Go Shopping</label>
-          <input type="text" value="Go Shopping" class="task-input">
-          <button class="btn edit-btn">Save</button>
-          <button class="btn delete-btn">
-            <img class="btn-icon" src="./remove.svg">
-          </button>
-        </li>
-      </ul>
-      <h3 class="tasks-title">Completed</h3>
-      <ul id="completed-tasks" class="list" >
-        <li class="list-item">
-          <input class="task-checkbox" type="checkbox" checked>
-          <label class="task-label">See the Doctor</label>
-          <input type="text" class="task-input">
-          <button class="btn edit-btn">Edit</button>
-          <button class="btn delete-btn">
-            <img class="btn-icon" src="./remove.svg">
-          </button>
-        </li>
-      </ul>
-    </div>
+          <button class="btn" type="submit">Add</button>
+        </form>
+      </section>
+      <section id="todo-section" aria-labelledby="todo-title">
+        <h2 id="todo-title" class="tasks-title">Todo</h2>
+        <ul id="incomplete-tasks" class="list">
+          <li class="list-item">
+            <input class="task-checkbox" type="checkbox" aria-label="Pay Bills">
+            <label class="task-label">Pay Bills</label>
+            <input type="text" class="task-input" aria-label="Edit task 'Pay Bills'">
+            <button class="btn edit-btn" aria-label="Edit task 'Pay Bills'">Edit</button>
+            <button class="btn delete-btn" aria-label="Delete task 'Pay Bills'">
+              <img class="btn-icon" src="./remove.svg">
+            </button>
+          </li>
+          <li class="list-item edit-mode">
+            <input class="task-checkbox" type="checkbox" aria-label="Go Shopping">
+            <label class="task-label">Go Shopping</label>
+            <input type="text" value="Go Shopping" class="task-input" aria-label="Edit task 'Go Shopping'">
+            <button class="btn edit-btn" aria-label="Save task 'Go Shopping'">Save</button>
+            <button class="btn delete-btn" aria-label="Delete task 'Go Shopping'">
+              <img class="btn-icon" src="./remove.svg">
+            </button>
+          </li>
+        </ul>
+      </section>
+      <section id="completed-section" aria-labelledby="completed-tasks-title">
+      <h2 id="completed-tasks-title" class="tasks-title">Completed</h2>
+        <ul id="completed-tasks" class="list" >
+          <li class="list-item">
+            <input class="task-checkbox" type="checkbox" aria-label="See the Doctor" checked>
+            <label class="task-label">See the Doctor</label>
+            <input type="text" class="task-input" aria-label="Edit task 'See the Doctor'">
+            <button class="btn edit-btn" aria-label="Edit task 'See the Doctor'">Edit</button>
+            <button class="btn delete-btn" aria-label="Delete task 'See the Doctor'">
+              <img class="btn-icon" src="./remove.svg">
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
