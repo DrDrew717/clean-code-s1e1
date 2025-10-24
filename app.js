@@ -52,6 +52,7 @@ var createNewTaskElement=function(taskString){
     deleteButton.className="task__btn task__btn--delete";
     deleteButtonImg.src='./remove.svg';
     deleteButtonImg.className="task__btn-icon";
+    deleteButtonImg.setAttribute('alt', '');
     deleteButton.appendChild(deleteButtonImg);
     deleteButton.setAttribute('aria-label', `Delete task '${taskInput.value}'`);
 
